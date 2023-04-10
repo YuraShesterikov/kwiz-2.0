@@ -694,6 +694,7 @@ span {
 
   .header__top-rating {
     justify-content: end;
+    transform: translate(10px, 0px);
   }
 
   .header__top-rating-box {
