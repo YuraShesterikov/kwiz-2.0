@@ -97,6 +97,7 @@ span {
 
 .header__top-rating-desc {
   padding-top: 3px;
+  white-space: nowrap;
 }
 
 .header__top-button {
@@ -109,6 +110,7 @@ span {
   margin-left: 40px;
   padding: 30px 30px;
   transition: .3s;
+  white-space: nowrap;
 }
 
 .header__top-button:hover {
@@ -128,10 +130,15 @@ span {
   padding-bottom: 70px;
 }
 
+.header__center--wrapp {
+  position: relative;
+  display: inline-block;
+}
+
 .header__center-button {
   display: flex;
   position: relative;
-  padding: 36px 60px;
+  padding: 36px 140px 36px 65px;
   max-width: 460px;
   font-weight: 700;
   font-size: 20px;
@@ -148,19 +155,20 @@ span {
   background: linear-gradient(180deg, #FF9664 0%, rgba(246, 104, 27, 0.9) 70%);
 }
 
-.header__center-button::before {
+.header__center--wrapp::before {
   content: "";
   display: block;
   position: absolute;
   top: -32px;
-  right: -19px;
-  width: 190px;
+  right: 23px;
+  width: 143px;
   height: 160px;
   background: url(../img/header/button-doc.png) 0 0 / cover no-repeat;
   transform: rotate(-9.9deg);
+  z-index: 10;
 }
 
-.header__center-button::before {
+.header__center--wrapp::before {
   -webkit-animation: transform-shiver-Y 3000ms linear 0ms infinite normal both;
   -moz-animation: transform-shiver-Y 3000ms linear 0ms infinite normal both;
   animation: transform-shiver-Y 3000ms linear 0ms infinite normal both;
@@ -565,6 +573,15 @@ span {
 }
 
 @media (max-width: 1170px) {
+
+  .header__top-logo {
+    padding-right: 20px;
+  }
+
+  .header__top-button {
+    margin-left: 0;
+  }
+
   .kwiz__right {
     padding-bottom: 50px;
   }
@@ -598,6 +615,32 @@ span {
     margin: 0;
   }
 
+  .header__top-rating {
+    padding: 30px 0px;
+    transform: translate(24px, 0px);
+  }
+
+  .header__center { 
+    text-align: center;
+  }
+
+  .header__center-h1 {
+    font-size: 40px;
+  }
+
+  .header__center-h2 {
+    font-size: 25px;
+  }
+
+  .header__center--wrapp-box {
+    display: flex;
+    justify-content: center;
+  }
+
+  .header__center--wrapp {
+    margin: 0 auto;
+  }
+
   .header__list {
     flex-direction: column;
     align-items: center;
@@ -605,10 +648,20 @@ span {
 
   .header__item {
     margin-bottom: 15px;
+    max-height: 112px;
   }
 
-  .header__center-button {
-    margin: 0 auto;
+  .kwiz {
+    padding-top: 70px;
+  }
+
+  .kwiz__h2 {
+    font-size: 35px;
+    line-height: 50px;
+  }
+
+  .kwiz__h3 {
+    font-size: 25px;
   }
 
 }
@@ -637,6 +690,15 @@ span {
 
   .header__top-logo svg {
     width: 150px;
+  }
+
+  .header__top-rating {
+    justify-content: end;
+  }
+
+  .header__top-rating-box {
+    padding-left: 0px;
+    padding-right: 15px;
   }
 
   .header__top-rating-grade svg {
@@ -678,18 +740,26 @@ span {
     text-align: center;
   }
 
+  .header__center--wrapp-box {
+    display: block;
+  }
+
+  .header__center--wrapp {
+    display: block;
+  }
+
   .header__center-button {
     font-weight: 700;
     font-size: 3.78vw;
     line-height: 20px;
-    padding: 35px 20px;
+    padding: 35px 45px;
   }
 
-  .header__center-button::before {
+  .header__center--wrapp::before {
     top: -22px;
-    right: 11px;
-    width: 130px;
-    height: 140px;
+    right: -5px;
+    width: 137px;
+    height: 130px;
   }
 
   .header__top-button {
@@ -702,6 +772,18 @@ span {
     line-height: 12px;
   }
 
+  .header__item {
+    max-height: 160px;
+  }
+
+  .header__item--znak1 {
+    height: 160px;
+  }
+
+  .header__item-text {
+    font-size: 15px;
+  }
+
   .kwiz__opros-list {
     margin-right: 0;
   }
@@ -712,11 +794,22 @@ span {
 
 }
 
-@media (max-width: 320px) {
+@media (max-width: 360px) {
   .header__top-logo svg {
-    width: 130px;
+    width: 120px;
   }
+
+  .header__top-rating {
+    justify-content: flex-start;
+  }
+
+  .header__center-button {
+    font-size: 13px;
+    padding: 35px 20px
+  }
+
   .header__top-rating-desc {
     font-size: 12px;
   }
+
 }
